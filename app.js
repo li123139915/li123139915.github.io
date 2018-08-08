@@ -13,6 +13,7 @@ let server = http.createServer((request, response) => {
     console.log(targetPath);
     // 判断地址是否存在
     if(fs.existsSync(targetPath)){
+        // 判断地址是文件还是文件夹
        fs.stat(targetPath,(err,status)=>{
             if(status.isFile()){
                 // response.setHeader("content-type",mime.getType(targetPath));
